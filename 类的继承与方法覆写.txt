@@ -1,0 +1,66 @@
+package jicheng;
+
+public class Fu {
+    int num1 = 100;
+    int num = 10;
+    public void call(){
+        System.out.println("打电话");
+    }
+    public void send()
+    {
+        System.out.println("发短信");
+    }
+    public void show() {
+        System.out.println("123");
+        System.out.println("456");
+        System.out.println("789");
+    }
+
+}
+
+
+
+
+package jicheng;
+
+public class Zi extends Fu {
+    int num2 = 200;
+    int num = 20;
+
+    public void method() {
+        int num = 30;
+        System.out.println(num);
+        System.out.println(this.num);
+        System.out.println(super.num);
+    }
+    public void show(){
+        super.show();
+        System.out.println("74521");
+        System.out.println("25413");
+    }
+}
+
+
+
+package jicheng;
+
+public class text {
+    public static void main(String[] args) {
+        Zi zi= new Zi();
+        Fu fu = new Fu();
+
+//        System.out.println(zi.num1);
+//        System.out.println(zi.num2);
+//        System.out.println(zi.num);
+//        System.out.println(fu.num);
+//        zi.method();
+        zi.call();
+        zi.send();
+        zi.show();
+
+        fu.call();
+        fu.send();
+        fu.show();
+    }
+}
+
