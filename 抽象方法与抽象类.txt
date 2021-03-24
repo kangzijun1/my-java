@@ -1,0 +1,107 @@
+一、抽象类与抽象方法概念及定义。
+package chouxiang;
+
+/*
+抽象方法，就是加上abstract关键字，然后去掉大括号，直接分号结束。
+抽象类，抽象方法所在的类，必须是抽象类才行，在class之前写上abstract即可。
+
+如何使用抽象类和抽象方法，
+1.不能直接创建new抽象类的对象。
+2.必须用一个子类来继承抽象父类。
+3.子类必须覆盖重写抽象类中的所有抽象方法。
+覆盖重写（实现），子类去掉抽象方法的abstract关键字，重新加上大括号和方法体。
+4.创建子类对象进行使用。
+ */
+
+public abstract class animal {
+    //定义了一个抽象类
+
+    public  abstract void eat();
+    //定义了一个抽象方法
+}
+
+二、有关构造方法的举例
+抽象父类：
+package chouxiang;
+
+public abstract class Fu {
+    public Fu()
+    {
+        System.out.println("抽象父类执行了");
+    }
+}
+
+
+子类：
+package chouxiang;
+
+public class Zi extends Fu {
+    public Zi()
+    {
+        System.out.println("子类方法执行了");
+    }
+}
+
+使用的类：
+package chouxiang;
+
+public class txet {
+    public static void main(String[] args) {
+        Zi zi = new Zi();
+    }
+
+}
+
+
+三、抽象类继承抽象类举例
+
+爷类：
+package chouxiang;
+
+public abstract class animal {
+
+    public abstract void eat();
+
+    public abstract void sleep();
+}
+
+父类：
+package chouxiang;
+
+public abstract class Dog extends animal{
+
+    @Override
+    public void eat()
+    {
+        System.out.println("狗吃骨头");
+    }
+}
+
+子类1：
+
+package chouxiang;
+
+public class ha2 extends Dog {
+
+    @Override
+    public void sleep()
+    {
+        System.out.println("嘿嘿嘿");
+    }
+}
+
+子类2：
+
+package chouxiang;
+
+public class jinmao extends Dog {
+     @Override
+    public void sleep()
+    {
+        System.out.println("呼呼呼");
+    }
+}
+
+
+
+
