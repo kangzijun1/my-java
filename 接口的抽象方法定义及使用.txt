@@ -1,0 +1,46 @@
+package jiekou;
+
+public interface animaljk {
+
+    public abstract void sleep();
+
+    public abstract void eat();
+
+    public abstract void play();
+}
+
+
+
+package jiekou;
+
+public  class animalImpl implements animaljk{
+
+    @Override
+    public void sleep() {
+        System.out.println("睡大觉");
+    }
+
+    @Override
+    public void eat() {
+        System.out.println("吃大饭");
+    }
+
+    @Override
+    public void play() {
+        System.out.println("玩三国牛马志");
+    }
+}
+
+
+
+package jiekou;
+
+public class animaljiekou {
+    public static void main(String[] args) {
+        animalImpl dog = new animalImpl();
+
+        dog.eat();
+        dog.sleep();
+        dog.play();
+    }
+}
