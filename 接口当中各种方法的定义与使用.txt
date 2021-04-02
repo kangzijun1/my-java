@@ -1,0 +1,134 @@
+一、
+普通抽象方法的定义与使用：
+
+package jiekou;
+
+public interface animaljk {
+
+    public abstract void sleep();
+
+    public abstract void eat();
+
+    public abstract void play();
+}
+
+
+package jiekou;
+
+public  class animalImpl implements animaljk{
+
+    @Override
+    public void sleep() {
+        System.out.println("睡大觉");
+    }
+
+    @Override
+    public void eat() {
+        System.out.println("吃大饭");
+    }
+
+    @Override
+    public void play() {
+        System.out.println("玩三国牛马志");
+    }
+}
+
+package jiekou;
+
+public class animaljiekou {
+    public static void main(String[] args) {
+        animalImpl dog = new animalImpl();
+
+        dog.eat();
+        dog.sleep();
+        dog.play();
+    }
+}
+二、
+默认方法的定义与使用：
+package jiekou;
+
+public interface moren {
+
+    public abstract void kang();
+    public default void method()
+    {
+        System.out.println("默认方法执行了");
+    }
+}
+
+
+package jiekou;
+
+public class morenlei1 implements moren {
+
+    @Override
+    public void kang()
+    {
+        System.out.println("AAA");
+    }
+}
+
+package jiekou;
+
+public class morenlei2 implements moren {
+
+    @Override
+    public void kang()
+    {
+        System.out.println("BBB");
+    }
+}
+
+package jiekou;
+
+public class morentext {
+
+    public static void main(String[] args) {
+        morenlei1 x = new morenlei1();
+        morenlei2 y = new morenlei2();
+
+        x.kang();
+        x.method();
+        System.out.println("=======================");
+        y.kang();
+        y.method();
+    }
+}
+三、
+静态方法的定义与使用：
+
+package jiekou;
+
+public interface jingtai {
+
+    public abstract void method2();
+    public static void method1()
+    {
+        System.out.println("静态方法执行了");
+    }
+}
+
+package jiekou;
+
+public class jingtailei implements jingtai  {
+    @Override
+    public void method2()
+    {
+        System.out.println("覆盖重写成功");
+    }
+
+}
+
+
+package jiekou;
+
+public class jingtaitext {
+
+    public static void main(String[] args) {
+        jingtailei x = new jingtailei();
+
+        x.method2();
+        jingtai.method1();
+    }
+}
