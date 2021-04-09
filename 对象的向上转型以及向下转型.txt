@@ -1,0 +1,65 @@
+package duotai;
+
+public  abstract class animal {
+
+    public abstract void eat();
+}
+
+
+package duotai;
+
+public  class cat extends animal {
+    @Override
+    public void eat() {
+        System.out.println("吃猫粮");
+    }
+    public void sport() {
+        System.out.println("猫睡觉");
+    }
+}
+
+package duotai;
+
+public class dog extends animal {
+    @Override
+    public void eat() {
+        System.out.println("吃狗粮");
+    }
+    public void sport() {
+        System.out.println("狗睡觉");
+    }
+}
+
+
+package duotai;
+
+public class text2 {
+    public static void main(String[] args) {
+        animal dongwu = new cat();
+        dongwu.eat();
+        System.out.println("=====================");
+        cat mao = (cat)dongwu;
+        mao.eat();
+        mao.sport();
+
+//        dog gou = (dog)dongwu;
+//        gou.eat();
+//        gou.sport(); 出现类转换异常。
+    }
+}
+
+注意事项：
+
+1.对象的向上转型，其实就是多态写法：
+格式：父类名称 对象名 = new 子类名称（）；          Animal animal = new Cat();
+含义：右侧创建一个子类对象，把它当作父类来看待使用。    创建了一只猫，向上转换成为更大范围的动物。
+·
+2.对象的向下转型，其实是一个还原的动作。
+格式：子类名称 对象名 =（子类名称）父类对象：
+含义：将父类对象还原成本来的子类对象。
+ Animal animal = new Cat();//本来是猫，向上转型成动物
+Cat cat=(Cat)animal;//本来是猫，已经被当成了动物，现在还原成本来的猫
+
+注意：
+a,必须保证对象本来创建的时候就是猫，才能向下转型成猫。
+b,如果对象创建的时候本来不是猫，现在非要向下转型成猫，就会报错》 ClassCastException
