@@ -1,0 +1,43 @@
+package abnormal;
+
+public class text11{
+    public static int div(int x,int y)throws Exception{
+        System.out.println("计算开始");
+        int result=0;
+        try
+        {
+            result = x/y;
+        }
+        catch(Exception e)
+        {
+            throw e;
+        }
+        finally
+        {
+            System.out.println("计算结束");
+        }
+        return result;
+    }
+}
+
+
+package abnormal;
+/*
+throw:指的是在方法中人为抛出一个异常类对象，基本上这个对象是已经存在的异常类对象。
+throws:在方法声明上使用，表示此方法在调用时必须处理异常，而在本方法中不需要。
+ */
+
+import com.sun.xml.internal.ws.api.message.ExceptionHasMessage;
+
+public class text12 {
+    public static void main(String[] args) {
+        try
+        {
+            System.out.println(text11.div(10,0)); //被调用处处理异常。
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
+}

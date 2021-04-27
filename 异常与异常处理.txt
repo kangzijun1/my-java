@@ -1,0 +1,68 @@
+package abnormal;
+/*
+1.有关异常以及异常处理的概述：一个程序即使在程序编译时没有发生任何错误，
+但是在运行时有可能以为错误导致程序中断，这些错误在java中称作异常。
+2.异常处理：如果没有正确处理异常，程序就会出现终端执行的情况。，为了让程
+序在出现异常之后依然可以正常执行完毕，必须引入异常处理语句来完善代码的编写。
+ */
+public class text1 {
+    public static void main(String[] args) {
+        System.out.println("1.除法计算开始");
+        System.out.println("2.除法计算："+(10/2));
+        System.out.println("3.除法计算结束");
+    }
+}
+
+
+package abnormal;
+
+public class text2 {
+    public static void main(String[] args) {
+        System.out.println("1.除法计算开始");
+        try
+        {
+            System.out.println("2.除法计算：" + (10 / 0));
+        }
+        catch(ArithmeticException e)
+        {
+            System.out.println("出现了算数异常");
+        }
+        System.out.println("3.除法计算结束");
+    }
+}
+
+
+package abnormal;
+/*
+异常处理语句：
+try
+{
+    ////;
+}
+catch(异常类型，对象名)
+{
+    异常处理；
+    这里使用：printStackTrace();可以更明确的输出异常出现的位置，以便进行调试。
+}
+
+finally可用可不用，finally语句在异常处理的过程中，不管是否出现异常实际上finally中的语句都会执行。
+
+ */
+public class text3 {
+    public static void main(String[] args) {
+        System.out.println("1.除法计算开始");
+        try
+        {
+            System.out.println("2.除法计算："+(10/0));
+        }
+        catch(ArithmeticException e)
+        {
+            e.printStackTrace();
+        }
+        finally
+        {
+            System.out.println("不管是否出现异常，我都执行");
+        }
+        System.out.println("3.除法计算结束");
+    }
+}

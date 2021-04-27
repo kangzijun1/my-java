@@ -1,0 +1,7 @@
+JAVA中有四种权限修饰符：
+			public        >        protected        >       (default)       >       private
+同一个类（我自己）		  YES                           YES                            YES                       YES
+同一个包			  YES                           YES                            YES                       NO
+不同包，但是使子类		  YES		YES	                 NO	           NO
+不同包，也不同子类		  YES		NO	                 NO	           NO 
+default并不是关键字，不写任何权限修饰符就是默认default.

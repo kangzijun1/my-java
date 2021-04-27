@@ -1,0 +1,52 @@
+package innerlei;
+/*
+内部类分类：
+1.成员内部类
+2.局部内部类（包含匿名内部类）
+
+成员内部类的定义格式：
+修饰符 class 外部类名称{
+    修饰符 class 内部类名称{
+
+        //....
+    }
+    //.....
+}
+
+注意：内用外，随意访问，外用内，需要内部类对象。
+
+===========================
+如何使用成员内部类？有两种方法：
+1.间接方法：在外部类的方法当中，使用内部类；然后main只是调用外部类的方法。
+2.直接方法：公式：
+外部类名称.内部类名称 对象名 = new 外部类名称（）.new 内部类名称（）；
+ */
+
+public class Body
+{
+    public class Heart
+    {
+        public void methodin()
+        {
+            System.out.println("心脏跳动，砰砰砰");
+        }
+    }
+
+    public void methodout()
+    {
+        new Heart().methodin();
+    }
+}
+
+
+package innerlei;
+
+public class runBody {
+
+    public static void main(String[] args) {
+        new Body().methodout(); //通过调用外部类方法间接访问内部类。
+        System.out.println("===================");
+        Body.Heart body = new Body().new Heart();
+        body.methodin();//通过创建内部类对象，直接访问内部类。
+    }
+}
